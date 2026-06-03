@@ -1,0 +1,63 @@
+body {
+    background-image: url(mouse.jpg);
+    margin: 0;
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-family: Poppins, Arial, sans-serif;
+}
+
+
+.container {
+    width: 350px;
+    margin: 70px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+
+h1, h2 {
+    color: #222;
+}
+
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #999;
+    border-radius: 6px;
+}
+
+
+button {
+    width: 95%;
+    padding: 12px;
+    background: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+button:hover {
+    background: #0056d6;
+}
+
+
+a {
+    color: #0066dd;
+    text-decoration: none;
+}
+
+
+.alert {
+    color: red;
+    margin: 10px 0;
+}
+
+

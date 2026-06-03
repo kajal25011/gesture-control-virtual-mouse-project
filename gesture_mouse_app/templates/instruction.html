@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instructions - Gesture Mouse</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* Body Background */
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-image:url("/static/virtual.jpg");
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* Container Card */
+        .container {
+            width: 550px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+
+        h1 {
+            color: #222;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+
+        h2 {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 22px;
+        }
+
+
+        /* Gesture List */
+        ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+
+        ul li {
+            font-size: 18px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            transition: background 0.3s ease, transform 0.2s ease;
+            border-radius: 8px;
+            padding-left: 10px;
+        }
+
+
+        ul li:hover {
+            background: #f0f8ff;
+            transform: translateX(5px);
+        }
+
+
+        ul li span.emoji {
+            font-size: 26px;
+            margin-right: 15px;
+        }
+
+
+        /* Buttons */
+        button {
+            width: 80%;
+            padding: 14px;
+            margin: 10px 0;
+            background: linear-gradient(90deg, #ff758c, #ff7eb3);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+
+        button:hover {
+            background: linear-gradient(90deg, #ff7eb3, #ff758c);
+            transform: translateY(-3px);
+        }
+
+
+        /* Logout Link */
+        a.logout {
+            display: inline-block;
+            margin-top: 20px;
+            color: #ff4d4d;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+
+        a.logout:hover {
+            color: #ff0000;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <h2>🖱️ Gesture Control Virtual Mouse Instructions</h2>
+    <h1>How to Use the Virtual Mouse</h1>
+
+
+    <ul>
+        <li><span class="emoji">👉</span> <strong>Cursor Movement:</strong> Move your index finger</li>
+        <li><span class="emoji">🖐️</span> <strong>Left Click:</strong> Index + middle finger</li>
+        <li><span class="emoji">✌️</span> <strong>Right Click:</strong> Thumb + pinky</li>
+        <li><span class="emoji">🤏</span> <strong>Double Click:</strong> Index + middle + ring finger</li>
+        <li><span class="emoji">📜</span> <strong>Scroll Up:</strong> Middle + ring + pinky</li>
+        <li><span class="emoji">🔽</span> <strong>Scroll Down:</strong> Index + ring</li>
+        <li><span class="emoji">💡</span> <strong>Brightness Control:</strong> Thumb + index pinch</li>
+        <li><span class="emoji">🔊</span> <strong>Volume Control:</strong> Thumb + index + middle pinch</li>
+        <li><span class="emoji">🤏</span> <strong>Drag and drop Click:</strong> Thumb + Index finger</li>
+    
+    </ul>
+
+
+    <a href="/start"><button>▶️ Start Gesture Mouse</button></a>
+<a href="/logout" class="logout">🔒 Logout</a>
+
+</div>
+
+
+</body>
+</html>

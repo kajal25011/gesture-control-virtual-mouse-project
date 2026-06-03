@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Gesture Mouse</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        body{
+            background-image:url("/static/background.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;                
+            margin: 0;
+        }
+        .container{
+            width: 350px;
+            margin: 80px auto;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            text-align: center;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .error{
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Login</h2>
+     {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <p class="error">{{ msg }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" onsubmit="return validateForm()">
+
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+
+        <!-- Backend + Frontend error -->
+        <p id="errorMsg" class="error">{{ error }}</p>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="/register">Register</a></p>
+
+</div>
+
+<script>
+function validateForm() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let errorMsg = document.getElementById("errorMsg");
+
+    // EXACTLY 8 characters with rules
+    let pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8}$/;
+
+    if (!pattern.test(username)) {
+        errorMsg.textContent = "Invalid username. Must be exactly 8 characters with uppercase, lowercase, number, and symbol.";
+        return false;
+    }
+
+    if (!pattern.test(password)) {
+        errorMsg.textContent = "Invalid password! Must be exactly 8 characters with uppercase, lowercase, number, and symbol.";
+        return false;
+    }
+
+    errorMsg.textContent = "";
+    return true;
+}
+</script>
+
+</body>
+</html>
